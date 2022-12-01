@@ -1,0 +1,59 @@
+
+<div id="outside">
+    <form id="survey-form" action = "/results" method="post">
+      <h1 id="title">Questionaire to check for Diabetes</h1>
+    
+      <!-- ------------------Personal Details---------------------------- -->
+      <fieldset>
+    
+        <legend>Personal Details</legend>
+    
+        <div>
+          <label id="age-label" for="Age">Age:</label>
+          <input type="number" required id="age" name="Age" placeholder="Enter age here">   </div>
+          <div>
+            <label id="BMI-label" for="BMI">BMI:</label>
+            <input type="number" required id="BMI" name="BMI" placeholder="Enter BMI here">   </div>
+          <div>
+            <label id="mental-label" for="mental">Number of days of poor mental health in the past 30 days:</label>
+            <input type="number" required id="mental" name="mental" placeholder="Number of days of poor mental health in the past 30 days">   </div>
+          <div>
+            <label id="physical-label" for="physical">Number of days of physical illness or injury in the past 30 days:</label>
+            <input type="number" required id="physical" name="physical" placeholder="Number of days of physical illness or injury in the past 30 days">   </div>
+          <div>
+            <label id="genhealth-label" for="genhealth">How would you rate your genneral health:</label>
+            <input type="number" required id="genhealth" name="genhealth" placeholder="(scale 1-5) 1 = excellent, 2 = very good, 3 = good, 4 = fair, 5 = poor">   </div>
+        <!-- ------------------Radio Buttons-------------------------------- -->
+        <div>
+          <label for="Gender">Gender</label>
+          <p>
+            <input type="radio" name="gender" value="male"> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+          </p>
+        </div>
+    
+      </fieldset>
+      <!-- ------------------Checkboxes-------------------------------- -->
+      <fieldset>
+        <label for="Gender">Check All That Apply</label>
+        <p>
+          <input type="checkbox" name="cholestrol" value="cholestrol">I have high cholestrol<br>
+          <input type="checkbox" name="check" value="check">I have had a cholestral check in the past 5 years<br>
+          <input type="checkbox" name="smoker" value="smoker">I have smoked at least 100 cigarettes in my entire life [Note: 5 packs = 100 cigarettes]<br>
+          <input type="checkbox" name="heart" value="heart" >Coronary heart disease (CHD) or myocardial infarction<br>
+          <input type="checkbox" name="activity" value="activity" >I have had physical activity in past 30 days - not including job<br>
+          <input type="checkbox" name="fruit" value="fruit" >I Consume Fruit one or more times per day <br>
+          <input type="checkbox" name="veggies" value="veggies" >I Consume Vegetables one or more times per day <br>
+          <input type="checkbox" name="alcohol" value="alcohol" >I drink alcohol: Adult male: more than 14 drinks per week. Adult female: more than 7 drinks per week<br>
+          <input type="checkbox" name="walk" value="walk" >I have serious difficulty walking or climbing stairs<br>
+          <input type="checkbox" name="hypertension" value="hypertension" >I have Hypertension<br>
+          <input type="checkbox" name="stroke" value="stroke" >I have had a stroke<br>
+        </p>
+    
+        </div>
+      <div id="submitbutton">
+        <button type="submit" id="submit">Check for Diabetes</button>   </div>
+    
+    </form>
+</div>
+    
