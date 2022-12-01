@@ -6,6 +6,7 @@ import math
 app = Flask(__name__)
 
 model = pickle.load(open('src/diabetes_lgbm_model.pkl', 'rb'))
+stdScale = pickle.load(open('src/diabetes_stdScale_model.pkl', 'rb'))
 list_params = ['Age', 'gender', 'cholestrol', 'check', 'BMI', 'smoker', 'heart', 'activity', 'fruit', 
                 'veggies', 'alcohol', 'genhealth', 'mental', 'physical', 'walk', 'hypertension', 'stroke']
 
@@ -36,10 +37,12 @@ def output_results():
                 X.append(1.0)
             else:
                 X.append(0.0)
+    stdScale.transform([X])
     probs = model.predict_proba([X])
-    if probs[0][0] < 0.3:
+    print(probs)
+    if probs[0][1] < 0.3:
         output = 'You probably do not have Diabetes'
-    elif probs[0][0] < 0.7:
+    elif probs[0][1] < 0.7:
         output = "You might have Diabetes. Please go see a doctor"
     else:
         output = "There is a high likelyhood of you having Diabetes. Please go see a doctor"
